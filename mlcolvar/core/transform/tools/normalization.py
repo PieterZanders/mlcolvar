@@ -119,8 +119,8 @@ class Normalization(Transform):
         elif mode == "min_max":
             min = stats["min"]
             max = stats["max"]
-            self.mean = (max + min) / 2.0
-            range = (max - min) / 2.0
+            self.mean = min
+            range = (max - min)
             self.range = sanitize_range(range)
         elif mode == "custom":
             raise AttributeError(
